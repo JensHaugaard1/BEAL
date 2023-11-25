@@ -21,9 +21,8 @@ body {
   overflow: auto;
 }
 
-body::-webkit-scrollbar {
-  height: 0svh;
-  width: 0svw;
+::-webkit-scrollbar {
+  display: none; // Safari and Chrome
 }
 
 
