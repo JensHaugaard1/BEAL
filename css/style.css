@@ -1,0 +1,219 @@
+html {
+  height: 100svh;
+  overflow: auto;
+}
+
+
+body {
+ 
+  background:#000000;
+  color: white;
+  cursor: none;
+  font-size: 2vh;
+  font-family: 'Helvetica LT Narrow', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  height: 10000%;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+body::-webkit-scrollbar {
+  height: 0svh;
+  width: 0svw;
+}
+
+
+.noise::before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: .02;  
+  z-index: 6000;
+  pointer-events: none;
+  background: url(/noise.gif) ;
+}
+
+main{
+  height: 100%;
+  width: 100%;  
+}
+
+
+.video { 
+  position: fixed;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100dvh;
+ max-width: 80dvh;
+transition: height 0.3s ease-in-out;
+}
+ 
+
+@media (min-width: 1501px) {
+
+  #container3D canvas {
+  
+  position: relative;
+  width: 100vw !important;
+  height: 100vw !important;
+  scale: 0.4;
+  transition: scale 0.3s ease-in-out;
+ } 
+ }
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+
+ #container3D canvas {
+ 
+ position: relative;
+ width: 100vw !important;
+ height: 100vw !important;
+ scale: 0.5;
+ transition: scale 0.3s ease-in-out;
+} 
+}
+
+@media (max-width: 1000px) {
+
+  #container3D canvas {
+  
+  position: relative;
+  width: 100svw !important;
+  height: 100svw !important;
+  scale: 1;
+  transition: scale 0.3s ease-in-out;
+ } 
+ }
+
+
+ @media (min-width: 1000px) {
+  .cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: rgb(119, 119, 119);
+    left: -100px;
+    z-index: 2000; 
+    mix-blend-mode: difference;
+    
+  }
+}
+
+.righttop { 
+  text-align: right;
+ position: fixed; 
+ top: 1svh; 
+ right: 1.5svh;
+ width: 50%; 
+ height: -100%; 
+ color: rgb(255, 255, 255);
+ cursor: none;
+ z-index: 2000;
+}
+
+.lefttop { 
+  text-align: left;
+ position: fixed; 
+ top: 1svh; 
+ left: 1.5svh;
+ width: 75%; 
+ height: -100%; 
+ color: rgb(0, 0, 0);
+ z-index: 2000;
+}
+
+/*@media (min-width: 1001px) {*/
+.leftbottom { 
+  text-align: left;
+  position: fixed; 
+  bottom: 0svh; 
+  left: 1.5svh;
+  width: 50%; 
+  color: rgb(0, 0, 0);
+  z-index: 2000;
+  
+}
+ 
+
+.rightbottom { 
+   text-align: right;
+  position: fixed; 
+  bottom: 0svh;
+  right: 1.5svh;
+  width: 50%;  
+  cursor: none;
+  z-index: 2000;
+  text-decoration: line-through;
+}
+
+/*} */
+
+
+
+/*
+@media (max-width: 1000px) {
+
+  .leftbottom { 
+    text-align: left;
+    position: fixed; 
+    bottom: 2svh; 
+    left: 3svh;
+    width: 50%; 
+    height: -100%;
+    color: rgb(0, 0, 0);
+    z-index: 2000;
+    
+  }
+   
+  
+  .rightbottom { 
+     text-align: right;
+    position: fixed; 
+    bottom: 2svh;
+    right: 3svh;
+    width: 50%; 
+    height: -100%; 
+    cursor: none;
+    z-index: 2000;
+  }
+
+}
+*/
+
+a {
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:visited {
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease-in-out;
+}
+
+
+a:hover {
+color: rgb(221, 221, 221);
+transition: color 0.3s ease-in-out;
+}
+
+a:link {
+cursor: none;
+transition: color 0.3s ease-out;
+}
+
+li {
+  display: inline-block;
+  vertical-align: top
+}
