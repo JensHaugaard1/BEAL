@@ -1,7 +1,4 @@
 
-
-
-
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
@@ -58,22 +55,22 @@ document.getElementById("container3D").appendChild(renderer.domElement);
 camera.position.z = objToRender === "eye" ? 750 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 1.5); // (color, intensity)
+const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
 topLight.position.set(0, 1000, 500) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
 
-const topLight2 = new THREE.DirectionalLight(0xffffff, 1.5); // (color, intensity)
+const topLight2 = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
 topLight2.position.set(500, 1000, 0) //top-left-ish
 topLight2.castShadow = true;
 scene.add(topLight2);
 
-const topLight3 = new THREE.DirectionalLight(0xffffff, 1.5); // (color, intensity)
+const topLight3 = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
 topLight3.position.set(0, 1000, -500) //top-left-ish
 topLight3.castShadow = true;
 scene.add(topLight3);
 
-const topLight4 = new THREE.DirectionalLight(0xffffff, 1.5); // (color, intensity)
+const topLight4 = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
 topLight4.position.set(-500, 1000, 0) //top-left-ish
 topLight4.castShadow = true;
 scene.add(topLight4);
@@ -84,8 +81,8 @@ if (objToRender === "dino") {
  
 }
 
-//const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-//scene.add( light );
+const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( light );
 
 //Render the scene
 function animate() {
@@ -101,7 +98,7 @@ function animate() {
     //object.rotation.x = -1 + mouseY * 1 / window.innerHeight;
     //object.rotation.y += 0.01;
     //object.rotation.y += 0.01;
-    object.rotation.y =  + scrollY / 410;
+    object.rotation.y =  + scrollY / 600;
   }
 
 
