@@ -71,7 +71,7 @@ main{
   height: 100dvh;
  max-width: 80dvh;
 transition: height 0.3s ease-in-out;
-filter: contrast(0.9);
+filter: contrast(0.8);
 }
  
 
