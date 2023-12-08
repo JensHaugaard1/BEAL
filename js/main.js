@@ -81,7 +81,6 @@ function animate() {
   if (object && objToRender === "eye") {
     //I've played with the constants here until it looked good 
 
-    object.position.y = -3;
     
     scene.rotation.x =  (mouseY * 0.8 / window.innerHeight) - 0.4;
     //object.rotation.y += 0.01;
