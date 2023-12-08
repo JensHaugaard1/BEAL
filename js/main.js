@@ -6,7 +6,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(50, 2160 / 2160, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, 1080 / 1080, 0.1, 1000);
 
 //Keep track of the mouse position, so we can make the eye move
 let mouseX = window.innerWidth / 2;
@@ -52,7 +52,7 @@ renderer.setSize(2160, 2160);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === "eye" ? 500 : 500;
+camera.position.z = objToRender === "eye" ? 50 : 20;
 
 //Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 0.2); // (color, intensity)
@@ -80,6 +80,8 @@ function animate() {
   //Make the eye move
   if (object && objToRender === "eye") {
     //I've played with the constants here until it looked good 
+
+    object.position.y = -3;
     
     scene.rotation.x =  (mouseY * 0.8 / window.innerHeight) - 0.4;
     //object.rotation.y += 0.01;

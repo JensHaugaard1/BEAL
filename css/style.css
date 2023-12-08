@@ -18,7 +18,7 @@ body {
   -webkit-overflow-scrolling: touch;
   margin: 0;
   padding: 0;
-  overflow: auto;
+  overflow: hidden;
   scrollbar-width: none;
 }
 
@@ -26,19 +26,6 @@ body {
   display: none; // Safari and Chrome
 }
 
-
-.noise::before{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  content: "";
-  opacity: .02;  
-  z-index: 6000;
-  pointer-events: none;
-  background: url(/noise.gif) ;
-}
 
 main{
   height: 100%;
@@ -56,7 +43,7 @@ main{
     background-color: rgb(234, 234, 234);
     left: -100px;
     z-index: 2000; 
-    mix-blend-mode:exclusion;
+    mix-blend-mode: exclusion;
     backdrop-filter: blur(1.5px);
    
     
