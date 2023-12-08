@@ -45,7 +45,7 @@ main{
     z-index: 2000; 
     mix-blend-mode: exclusion;
     backdrop-filter: blur(1.5px);
-   
+   filter:saturate(0);
     
   }
 }
