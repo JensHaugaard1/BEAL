@@ -6,7 +6,7 @@ html {
 
 body {
  
-  background:#000000;
+  background:#0a0a0a;
   color: white;
   cursor: none;
   font-size: 2vh;
@@ -45,6 +45,23 @@ main{
   width: 100%;  
 }
 
+@media (min-width: 1000px) {
+  .cursor {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: rgb(234, 234, 234);
+    left: -100px;
+    z-index: 2000; 
+    mix-blend-mode:exclusion;
+    backdrop-filter: blur(1.5px);
+   
+    
+  }
+}
 
 .video { 
   position: fixed;
@@ -54,6 +71,7 @@ main{
   height: 100dvh;
  max-width: 80dvh;
 transition: height 0.3s ease-in-out;
+filter: contrast(0.9);
 }
  
 
@@ -94,22 +112,6 @@ transition: height 0.3s ease-in-out;
  }
 
 
- @media (min-width: 1000px) {
-  .cursor {
-    position: fixed;
-    width: 25px;
-    height: 25px;
-    margin: -15px 0 0 -15px;
-    border-radius: 50%;
-    pointer-events: none;
-    background-color: rgb(234, 234, 234);
-    left: -100px;
-    z-index: 2000; 
-    mix-blend-mode:exclusion;
-    backdrop-filter: blur(1.5px);
-    
-  }
-}
 
 .righttop { 
   text-align: right;

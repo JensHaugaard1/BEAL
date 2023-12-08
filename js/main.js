@@ -6,7 +6,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(50, 2160 / 2160, 0.1, 2000);
+const camera = new THREE.PerspectiveCamera(50, 2160 / 2160, 0.1, 1000);
 
 //Keep track of the mouse position, so we can make the eye move
 let mouseX = window.innerWidth / 2;
@@ -52,28 +52,14 @@ renderer.setSize(2160, 2160);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === "eye" ? 750 : 500;
+camera.position.z = objToRender === "eye" ? 500 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
-topLight.position.set(0, 1000, 500) //top-left-ish
+const topLight = new THREE.DirectionalLight(0xffffff, 0.2); // (color, intensity)
+topLight.position.set(1000, -2000, -1000) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
 
-const topLight2 = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
-topLight2.position.set(500, 1000, 0) //top-left-ish
-topLight2.castShadow = true;
-scene.add(topLight2);
-
-const topLight3 = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
-topLight3.position.set(0, 1000, -500) //top-left-ish
-topLight3.castShadow = true;
-scene.add(topLight3);
-
-const topLight4 = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
-topLight4.position.set(-500, 1000, 0) //top-left-ish
-topLight4.castShadow = true;
-scene.add(topLight4);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
 if (objToRender === "dino") {
@@ -81,24 +67,24 @@ if (objToRender === "dino") {
  
 }
 
-const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+const light = new THREE.AmbientLight( 0x404040, 4 ); // soft white light
 scene.add( light );
 
 //Render the scene
 function animate() {
   requestAnimationFrame(animate);
   //Here we could add some code to update the scene, adding some automatic movement
-  scene.rotation.y += 0.005;
+  scene.rotation.y += 0.008;
   
 
   //Make the eye move
   if (object && objToRender === "eye") {
     //I've played with the constants here until it looked good 
     
-    //object.rotation.x = -1 + mouseY * 1 / window.innerHeight;
+    scene.rotation.x =  (mouseY / window.innerHeight) - 0.5;
     //object.rotation.y += 0.01;
     //object.rotation.y += 0.01;
-    object.rotation.y =  + scrollY / 600;
+    object.rotation.y =  + scrollY / 750;
   }
 
 
