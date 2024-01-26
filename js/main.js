@@ -6,7 +6,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(50, 1080 / 1080, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(30, 1080 / 1080, 0.1, 500);
 
 //Keep track of the mouse position, so we can make the eye move
 let mouseX = window.innerWidth / 2;
@@ -27,7 +27,7 @@ const loader = new GLTFLoader();
 
 //Load the file
 loader.load(
-  `models/${objToRender}/scene.gltf`,
+  `models/NEWS.gltf`,
   function (gltf) {
     //If the file is loaded, add it to the scene
     object = gltf.scene;
@@ -55,10 +55,15 @@ document.getElementById("container3D").appendChild(renderer.domElement);
 camera.position.z = objToRender === "eye" ? 50 : 20;
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 0.2); // (color, intensity)
+const topLight = new THREE.DirectionalLight(0xffffff, 0.1); // (color, intensity)
 topLight.position.set(1000, -2000, -1000) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
+
+const topLight2 = new THREE.DirectionalLight(0x404040, 0.5); // (color, intensity)
+topLight2.position.set(-1000, -200, 500) //top-left-ish
+topLight2.castShadow = true;
+scene.add(topLight2);
 
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
